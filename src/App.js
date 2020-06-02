@@ -1,7 +1,6 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Routes from './routes';
+import Routes from './routes/index';
 function App() {
   return (
     <div className="App">

@@ -1,4 +1,4 @@
-import { Route } from 'react-dom';
+import { Route } from 'react-router-dom';
 import React from 'react';
 
 const publicRoute = ({component: Component, ...rest}) => {
