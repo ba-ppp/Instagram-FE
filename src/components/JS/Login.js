@@ -7,7 +7,6 @@ export default class Login extends Component {
     this.state = {
       username: "",
       password: "",
-      token: ""
     };
     this.postUsername = this.postUsername.bind(this);
     this.postPassword = this.postPassword.bind(this);
@@ -31,12 +30,12 @@ export default class Login extends Component {
     axios
       .post("https://prs8c.sse.codesandbox.io/login", data)
       .then(res => {
-        this.setState({ token: res.data.token });
-        console.log(this.state.token);
+        window.localStorage.setItem('token', res.data.token)
       })
       .catch(function(error) {
         console.log(error);
       });
+      
   }
 
   render() {
