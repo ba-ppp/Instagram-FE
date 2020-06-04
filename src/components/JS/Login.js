@@ -1,6 +1,14 @@
-import React, { Component } from "react";
+import React, { Component } from 'react'
 import axios from "axios";
 import { Redirect } from 'react-router-dom';
+import '../CSS/Login.css';
+import { Button } from 'antd';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 export default class Login extends Component {
   constructor() {
@@ -42,27 +50,39 @@ export default class Login extends Component {
   }
 
   render() {
-      
     return (
         
-        <div className="App">
+        <div className="main">
+          <div className="form">
+            
+            <div className="bg-input" />
             <div>
-            <label>username </label>
-            <input name="username" onChange={this.postUsername} />
+              <input className="username" name="username" placeholder="Tên người dùng hoặc email" onChange={this.postUsername} />
             </div>
             <div>
-            <label>password</label>
-            <input name="password" type="password" onChange={this.postPassword} />
+              <input className="password" name="password" placeholder="Mật khẩu" type="password" onChange={this.postPassword} />
             </div>
-            <button type="submit" onClick={this.postLogin}>
-            Send
-            </button>
+            <Button style={{marginTop:20}} type="primary" onClick={this.postLogin}>
+              Đăng nhập
+            </Button>
+              <div className="line"></div>
+              <Link to='/forgetPass' className="link">Quên mật khẩu?</Link>
+          </div>
+          <div className="form register">
+              <div style={{marginTop:10}}>Bạn không có tài khoản?</div>
+              <Link to='/register'>Đăng ký</Link>
+          </div>
+
+
+          
             {this.state.login && (<Redirect
                 to={{
                     pathname: "/",
                 }}
             />
             )}
+
+            
         </div>
     );
   }

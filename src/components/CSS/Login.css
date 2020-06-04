@@ -1,0 +1,68 @@
+.main{
+    background-color: #efeded;
+    height: 50em;
+    width: 100%;
+    display: inline-block;
+}
+
+.form{
+    max-width: 350px;
+    width: 100%;
+    border: 1px solid #c2bfbf6e;
+    margin: 100px auto;
+    margin-bottom: 10px !important;
+    height: 300px;
+    background-color: #f6f4f4;
+    text-align: center;
+}
+
+.register{
+    margin: 20px auto !important;
+    height: 60px;
+}
+
+.bg-input{
+    background-image: url('https://instagram-9977b.web.app/images/735145cfe0a4.png');
+    background-repeat: no-repeat;
+    height: 30px;
+    margin-left: 130px;
+    margin-top: 50px;
+}
+
+.username{
+    font-size: 16px;
+    margin-top: 40px;
+}
+.password{
+    font-size: 16px;
+    margin-top: 10px
+}
+
+.line{
+    border-top: 1px solid black;
+    margin: 15px auto;
+    margin-bottom: 10px !important;
+    width: 50%;
+}
+
+input::-webkit-input-placeholder {
+    font-size: 12px;
+    line-height: 3;
+    padding-left: 10px;
+}
+
+input[type='password']{
+    -webkit-appearance: textfield !important;
+}
+
+input:focus{
+    outline: none
+}
+
+.link:visited{
+    color: #00376b;
+}
+
+.link:hover{
+    color: #00376b;
+}
