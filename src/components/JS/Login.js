@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { Redirect } from 'react-router-dom';
 
 export default class Login extends Component {
   constructor() {
@@ -30,7 +31,9 @@ export default class Login extends Component {
     axios
       .post("https://prs8c.sse.codesandbox.io/login", data)
       .then(res => {
-        window.localStorage.setItem('token', res.data.token)
+        window.localStorage.setItem('token', res.data.token);
+        this.setState({login: true})
+
       })
       .catch(function(error) {
         console.log(error);
@@ -39,20 +42,28 @@ export default class Login extends Component {
   }
 
   render() {
+      
     return (
-      <div className="App">
-        <div>
-          <label>username </label>
-          <input name="username" onChange={this.postUsername} />
+        
+        <div className="App">
+            <div>
+            <label>username </label>
+            <input name="username" onChange={this.postUsername} />
+            </div>
+            <div>
+            <label>password</label>
+            <input name="password" type="password" onChange={this.postPassword} />
+            </div>
+            <button type="submit" onClick={this.postLogin}>
+            Send
+            </button>
+            {this.state.login && (<Redirect
+                to={{
+                    pathname: "/",
+                }}
+            />
+            )}
         </div>
-        <div>
-          <label>password</label>
-          <input name="password" type="password" onChange={this.postPassword} />
-        </div>
-        <button type="submit" onClick={this.postLogin}>
-          Send
-        </button>
-      </div>
     );
   }
 }

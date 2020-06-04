@@ -1,7 +1,8 @@
 import React from 'react';
 import {
     BrowserRouter,
-    Switch
+    Switch,
+    Redirect
 } from 'react-router-dom';
 
 import { Login,
@@ -17,7 +18,7 @@ const Routes = () => {
         //add routes here
         <BrowserRouter>
             <Switch> 
-                <PublicRoute path='/login' exact component={ Login } />
+                <PublicRoute path='/login' exact component={ Login }/>
                 <PublicRoute path='/register' exact component={ CreateAcc } />
                 <PublicRoute path='/forgetPass' exact component={ CreatePass } />
                 <PrivateRoute path="/" exact component={ TimeLine }/>
