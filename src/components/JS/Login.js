@@ -4,11 +4,16 @@ import { Redirect } from 'react-router-dom';
 import '../CSS/Login.css';
 import { Button } from 'antd';
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
   Link
 } from "react-router-dom";
+import { notification, Space } from 'antd';
+const openNotificationWithIcon = (type,err) => {
+  notification[type]({
+    message: 'Login failed',
+    description:
+      err
+  });
+};
 
 export default class Login extends Component {
   constructor() {
@@ -16,16 +21,29 @@ export default class Login extends Component {
     this.state = {
       username: "",
       password: "",
+      errors: "",
+      button: true
     };
     this.postUsername = this.postUsername.bind(this);
     this.postPassword = this.postPassword.bind(this);
     this.postLogin = this.postLogin.bind(this);
   }
-  postUsername(event) {
-    this.setState({ username: event.target.value });
+  async postUsername(event) {
+    await this.setState({ username: event.target.value });
+    if(this.state.username.length > 0 && this.state.password.length >= 6){
+      this.setState({button: false});
+    }else{
+      this.setState({button: true});
+    }
+    
   }
-  postPassword(event) {
-    this.setState({ password: event.target.value });
+  async postPassword(event) {
+    await this.setState({ password: event.target.value });
+    if(this.state.username.length > 0 && this.state.password.length >= 6){
+      this.setState({button: false});
+    }else{
+      this.setState({button: true});
+    }
   }
 
   postLogin(event) {
@@ -35,13 +53,16 @@ export default class Login extends Component {
       username: username,
       password: password
     };
-    console.log(data);
     axios
       .post("https://prs8c.sse.codesandbox.io/login", data)
       .then(res => {
-        window.localStorage.setItem('token', res.data.token);
-        this.setState({login: true})
-
+        if(!res.data.errors.length){
+          window.localStorage.setItem('token', res.data.token);
+          this.setState({login: true});
+        }else{
+          let error = res.data.errors.toString();
+          openNotificationWithIcon('error',error);
+        }
       })
       .catch(function(error) {
         console.log(error);
@@ -50,6 +71,7 @@ export default class Login extends Component {
   }
 
   render() {
+    
     return (
         
         <div className="main">
@@ -62,7 +84,7 @@ export default class Login extends Component {
             <div>
               <input className="password" name="password" placeholder="Mật khẩu" type="password" onChange={this.postPassword} />
             </div>
-            <Button style={{marginTop:20}} type="primary" onClick={this.postLogin}>
+            <Button style={{marginTop:20}} type="primary" onClick={this.postLogin} disabled={this.state.button}>
               Đăng nhập
             </Button>
               <div className="line"></div>
