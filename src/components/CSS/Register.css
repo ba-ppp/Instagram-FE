@@ -1,0 +1,31 @@
+.form-register{
+  height: 550px;
+}
+
+.errors{
+  color: red;
+}
+
+.bg-register{
+  background-image: url('https://instagram-9977b.web.app/images/735145cfe0a4.png');
+  background-repeat: no-repeat;
+  height: 30px;
+  margin-left: 130px;
+  margin-top: 50px;
+  margin-bottom: -20px;
+}
+
+
+.input-register{
+  margin-top: 5px;
+  font-size: 16px;
+}
+
+.first{
+  margin-top: 30px;
+}
+
+.input-register{
+ display: flex;
+ margin-left: 70px;
+}

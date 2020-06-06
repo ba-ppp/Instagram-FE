@@ -6,7 +6,7 @@ import { Button } from 'antd';
 import {
   Link
 } from "react-router-dom";
-import { notification, Space } from 'antd';
+import { notification } from 'antd';
 const openNotificationWithIcon = (type,err) => {
   notification[type]({
     message: 'Login failed',
@@ -76,7 +76,6 @@ export default class Login extends Component {
         
         <div className="main">
           <div className="form">
-            
             <div className="bg-input" />
             <div>
               <input className="username" name="username" placeholder="Tên người dùng hoặc email" onChange={this.postUsername} />
@@ -94,17 +93,12 @@ export default class Login extends Component {
               <div style={{marginTop:10}}>Bạn không có tài khoản?</div>
               <Link to='/register'>Đăng ký</Link>
           </div>
-
-
-          
             {this.state.login && (<Redirect
                 to={{
                     pathname: "/",
                 }}
             />
             )}
-
-            
         </div>
     );
   }

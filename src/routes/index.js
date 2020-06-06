@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom';
 
 import { Login,
-    CreateAcc,
+    Register,
     CreatePass,
     TimeLine
 } from '../components/JS/index' // add components here
@@ -19,7 +19,7 @@ const Routes = () => {
         <BrowserRouter>
             <Switch> 
                 <PublicRoute path='/login' exact component={ Login }/>
-                <PublicRoute path='/register' exact component={ CreateAcc } />
+                <PublicRoute path='/register' exact component={ Register } />
                 <PublicRoute path='/forgetPass' exact component={ CreatePass } />
                 <PrivateRoute path="/" exact component={ TimeLine }/>
             </Switch>
