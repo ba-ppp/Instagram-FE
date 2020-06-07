@@ -76,7 +76,9 @@ export default class Register extends Component{
     }
 
     postPass(e){
-        this.checkPass(e);
+        if(this.state.inputPass === true){
+            this.checkPass(e);
+        }
         this.setState({password: e.target.value});
         if(e.target.value.length >= 6){
             this.setState({passRight: true, passWrong: false});
@@ -87,7 +89,8 @@ export default class Register extends Component{
     }
 
     checkPass(e){
-        if(e.target.value === this.state.password){
+        this.setState({inputPass: true});
+        if(e.target.value === this.state.password && e.target.value.length >= 6){
             this.setState({checkPright: true, checkPwrong: false});
         }else{
             this.setState({checkPright: false, checkPwrong: true});
