@@ -1,0 +1,93 @@
+.main {
+    background-color: #f8f8f8;
+    height: 8500px !important;
+    width: 100%;
+  }
+  
+  .taskbar {
+    width: 100%;
+    margin-top: 0px;
+    border-bottom-style: solid;
+    border-color: #ececec;
+  
+    position: fixed;
+    background-color: white;
+  }
+  .taskbar-body {
+    display: flex;
+    margin-top: 10px;
+  }
+  .insta {
+    background-image: url(https://raw.githubusercontent.com/ba-p/Instagram/master/images/735145cfe0a4.png);
+    background-repeat: no-repeat;
+    height: 30px;
+    margin-left: 270px;
+    margin-bottom: 10px;
+    width: 120px;
+  }
+  
+  /* .bor-input{
+    border: 1px solid #d5d1d1;
+    height: 22px;
+    width: 210px;
+    margin-left: 230px;
+    text-align: center;
+  } */
+  .find {
+    color: #b4aeae;
+    font-size: 15px;
+    font-family: inherit;
+    border: 1px solid #b4aeae;
+    margin-left: 230px;
+    text-align: center;
+    width: 210px;
+  }
+  
+  .icon {
+    width: 800px;
+  }
+  .home {
+    margin-left: 170px;
+    width: 0px;
+  }
+  .send {
+    margin-left: 20px;
+    width: 0px;
+  }
+  .compass {
+    margin-left: 20px;
+    width: 0px;
+  }
+  .heart {
+    margin-left: 20px;
+    width: 0px;
+  }
+  .mypro {
+    border: 1px solid #ececec;
+    height: 32px;
+    width: 32px;
+    border-radius: 19px;
+    margin-top: -28px;
+    margin-left: 360px;
+  }
+  
+  a {
+    text-decoration: none;
+    color: black !important;
+  }
+  
+  a:visited {
+    color: black !important;
+  }
+  
+  .ant-avatar {
+    top: -8px !important;
+  }
+  
+  .ant-avatar > img {
+    object-fit: contain !important;
+  }
+  .profile-av {
+    margin-left: 20px;
+  }
+  

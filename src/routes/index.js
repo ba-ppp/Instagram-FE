@@ -8,7 +8,7 @@ import {
 import { Login,
     Register,
     CreatePass,
-    TimeLine
+    Main
 } from '../components/JS/index' // add components here
 import PublicRoute from './publicRoute';
 import PrivateRoute from './privateRoute';
@@ -21,7 +21,7 @@ const Routes = () => {
                 <PublicRoute path='/login' exact component={ Login }/>
                 <PublicRoute path='/register' exact component={ Register } />
                 <PublicRoute path='/forgetPass' exact component={ CreatePass } />
-                <PrivateRoute path="/" exact component={ TimeLine }/>
+                <PrivateRoute path="/" exact component={ Main }/>
             </Switch>
            
         </BrowserRouter>
